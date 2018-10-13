@@ -24,6 +24,7 @@ curl https://sdk.cloud.google.com | bash
 exec -l $SHELL
 gcloud init
 gcloud components install app-engine-python
+gcloud auth application-default login
 ```
 
 Install SASS:
@@ -38,19 +39,29 @@ Install app requirements:
 pip install -r requirements.txt -t lib
 ```
 
+Set the Cloud project:
+
+`our-bikes` is the id of the production Cloud project we use.
+
+If your own staging demo or are making your own site, create a [new project](https://console.cloud.google.com/projectselector/appengine/create?lang=go&st=true&_ga=2.144302192.-414734393.1539453135) and update `PROJECT_ID` in `config.py`.
+
 ### Run locally
 
-SCSS:
+SASS:
 
 ```
-scss --watch static/main.scss:static/main.css
+sass --watch static/main.scss:static/main.css
 ```
 
 App Engine:
 
+Run:
+
 ```
 dev_appserver.py .
 ```
+
+And go to http://localhost:8080/.
 
 ### Deploy
 
