@@ -1,0 +1,391 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+/* Global */
+body {
+  background: #FFD0D0;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.dark-bg {
+  background: #EB4040;
+  color: #fff; }
+  .dark-bg a {
+    color: #fff; }
+
+h1, h2, h3, h4, h5, h6, p, li {
+  line-height: 1.3; }
+
+h1 {
+  font-size: 44px; }
+  @media only screen and (max-width: 820px) {
+    h1 {
+      font-size: 36px; } }
+
+h2 {
+  font-size: 28px; }
+  @media only screen and (max-width: 820px) {
+    h2 {
+      font-size: 22px; } }
+
+h3 {
+  font-size: 18px; }
+
+p, li {
+  font-size: 16px; }
+
+span.handwriting {
+  font-family: 'Homemade Apple', cursive; }
+
+.nav {
+  background: #EB4040;
+  text-align: left;
+  color: #fff;
+  display: flex; }
+  @media only screen and (max-width: 820px) {
+    .nav {
+      flex-direction: column;
+      text-align: center; } }
+  .nav a.logo {
+    background: rgba(115, 0, 1, 0.5);
+    font-family: 'Homemade Apple', cursive;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 17px 20px 8px; }
+    .nav a.logo:hover {
+      background: rgba(115, 0, 1, 0.6); }
+  .nav .navbar {
+    text-align: right;
+    background: rgba(115, 0, 1, 0.3);
+    flex-grow: 1;
+    line-height: 45px;
+    padding: 0 5px; }
+    @media only screen and (max-width: 820px) {
+      .nav .navbar {
+        text-align: center; } }
+  .nav ul li {
+    display: inline-block;
+    padding: 0 15px; }
+  .nav a {
+    color: #fff;
+    text-decoration: none; }
+
+.footer {
+  margin: 0 auto 25px;
+  max-width: 700px;
+  line-height: 1.5;
+  padding: 0 20px; }
+  .footer.dark {
+    background: #EB4040; }
+  .footer .contact {
+    text-align: center;
+    padding-bottom: 20px; }
+  .footer strong {
+    font-weight: 600;
+    color: #332A2A; }
+  .footer p {
+    margin: 10px 0; }
+  .footer p, .footer p a {
+    font-family: sans-serif;
+    color: #666;
+    font-size: 12px; }
+
+.dark-bg .footer strong {
+  color: #fff; }
+.dark-bg .footer p, .dark-bg .footer p a {
+  color: rgba(255, 255, 255, 0.75); }
+.dark-bg .footer .social li a.twitter {
+  background-image: url(/static/images/twitter-light.svg); }
+.dark-bg .footer .social li a.instagram {
+  background-image: url(/static/images/instagram-light.svg); }
+.dark-bg .footer .social li a.facebook {
+  background-image: url(/static/images/facebook-light.svg); }
+.dark-bg .footer .social li a.medium {
+  background-image: url(/static/images/medium-light.svg); }
+
+.social {
+  list-style-type: none; }
+  .social li {
+    display: inline-block; }
+    .social li a {
+      opacity: 0.8;
+      display: inline-block;
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 30px;
+      height: 30px;
+      background-size: contain;
+      margin: 0 15px; }
+      .social li a.twitter {
+        background-image: url(/static/images/twitter-dark.svg); }
+      .social li a.instagram {
+        background-image: url(/static/images/instagram-dark.svg); }
+      .social li a.facebook {
+        background-image: url(/static/images/facebook-dark.svg); }
+      .social li a.medium {
+        background-image: url(/static/images/medium-dark.svg); }
+  .social.light a.twitter {
+    background-image: url(/static/images/twitter-light.svg); }
+  .social.light a.instagram {
+    background-image: url(/static/images/instagram-light.svg); }
+  .social.light a.facebook {
+    background-image: url(/static/images/facebook-light.svg); }
+  .social.light a.medium {
+    background-image: url(/static/images/medium-light.svg); }
+
+/* Supporters */
+.body.homepage .banner {
+  background: #730000;
+  color: #fff;
+  text-align: center;
+  padding: 15px 15px 14px;
+  font-size: 18px; }
+  .body.homepage .banner strong {
+    font-weight: 600; }
+.body.homepage .hero {
+  background: #EB4040;
+  padding: 10px;
+  text-align: center; }
+  .body.homepage .hero .message {
+    margin: 65px auto 150px; }
+    @media only screen and (max-width: 820px) {
+      .body.homepage .hero .message {
+        margin: 50px auto 120px; } }
+  .body.homepage .hero .text {
+    margin: auto;
+    max-width: 800px; }
+  .body.homepage .hero h1, .body.homepage .hero h2, .body.homepage .hero h3, .body.homepage .hero p {
+    text-align: center;
+    padding: 15px; }
+  .body.homepage .hero h1 {
+    font-size: 68px;
+    font-weight: 600; }
+    @media only screen and (max-width: 820px) {
+      .body.homepage .hero h1 {
+        font-size: 36px; } }
+  .body.homepage .hero .confirm {
+    border: 2px solid #fff;
+    display: inline-block;
+    margin: 20px auto; }
+    .body.homepage .hero .confirm img {
+      position: relative;
+      top: 3px; }
+    .body.homepage .hero .confirm h3 {
+      padding-top: 0; }
+.body.homepage .form {
+  margin-top: 40px;
+  text-align: center; }
+  .body.homepage .form input, .body.homepage .form select, .body.homepage .form button {
+    background: #FFD0D0;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    margin: 5px;
+    border-radius: 5px;
+    box-sizing: border-box; }
+    @media only screen and (max-width: 820px) {
+      .body.homepage .form input, .body.homepage .form select, .body.homepage .form button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px; } }
+  .body.homepage .form select {
+    height: 43px;
+    position: relative;
+    top: -1px;
+    color: #777;
+    -webkit-appearance: none; }
+  .body.homepage .form input:focus, .body.homepage .form select:focus {
+    background: #fff;
+    outline: none; }
+  .body.homepage .form button {
+    background-color: #EB4040;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 8px;
+    -webkit-appearance: none; }
+.body.homepage .letter {
+  background: #fff;
+  max-width: 760px;
+  margin: -50px auto 50px;
+  padding: 30px;
+  line-height: 1.5;
+  font-weight: 400;
+  position: relative;
+  font-family: 'Lora', sans-serif;
+  font-size: 20px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15); }
+  .body.homepage .letter strong {
+    font-weight: 900; }
+  @media only screen and (max-width: 820px) {
+    .body.homepage .letter {
+      padding: 15px; } }
+  @media only screen and (max-width: 820px) {
+    .body.homepage .letter {
+      font-size: 16px; } }
+  .body.homepage .letter .to {
+    font-size: 14px;
+    margin-bottom: 30px;
+    background: #f1f1f1;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center; }
+    .body.homepage .letter .to p {
+      line-height: 1.5;
+      margin: 5px 0; }
+    @media only screen and (max-width: 820px) {
+      .body.homepage .letter .to {
+        margin-left: -15px;
+        margin-right: -15px; } }
+  .body.homepage .letter p, .body.homepage .letter li {
+    margin: 15px; }
+  .body.homepage .letter p.quote {
+    font-style: italic;
+    padding-left: 20px;
+    display: inline-block; }
+  .body.homepage .letter ul {
+    list-style-type: circle;
+    margin-left: 20px; }
+  .body.homepage .letter a {
+    color: #000; }
+
+.body.countdown {
+  background: #EB4040;
+  padding: 10px;
+  text-align: center;
+  min-height: 80vh; }
+  .body.countdown .message {
+    margin: 40px auto; }
+  .body.countdown .text {
+    margin: auto;
+    max-width: 700px; }
+  .body.countdown h1, .body.countdown h2, .body.countdown h3, .body.countdown p {
+    text-align: center;
+    padding: 10px; }
+  .body.countdown .confirm {
+    border: 2px solid #fff;
+    display: inline-block;
+    margin: 20px auto; }
+    .body.countdown .confirm img {
+      position: relative;
+      top: 3px; }
+    .body.countdown .confirm h3 {
+      padding-top: 0; }
+  .body.countdown #countdown {
+    font-size: 12vw;
+    line-height: 1; }
+
+.body.supporters {
+  background: #EB4040;
+  padding: 10px;
+  text-align: center; }
+  .body.supporters .message {
+    margin: 40px auto; }
+  .body.supporters .text {
+    margin: auto;
+    max-width: 700px; }
+  .body.supporters h1, .body.supporters h2, .body.supporters h3, .body.supporters p {
+    text-align: center;
+    padding: 10px; }
+
+.body.alert {
+  padding: 10px;
+  text-align: center; }
+  .body.alert a.button {
+    color: #EB4040;
+    border: 2px solid #EB4040;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    margin: 10px auto 25px;
+    font-weight: bold; }
+  .body.alert .message {
+    margin: 40px auto; }
+  .body.alert .graphic {
+    margin: 20px auto;
+    max-width: 815px;
+    width: 100%; }
+  .body.alert .text {
+    margin: auto;
+    max-width: 815px; }
+  .body.alert h1, .body.alert h2, .body.alert h3, .body.alert p {
+    text-align: center;
+    padding: 10px; }
+  .body.alert h1, .body.alert h2 {
+    color: #EB4040; }
+  .body.alert .header {
+    max-width: 815px;
+    margin: 0 auto 25px; }
+    .body.alert .header .heart {
+      width: 75px;
+      margin-bottom: 10px; }
+    .body.alert .header h1, .body.alert .header h2 {
+      padding: 0; }
+  .body.alert .email {
+    margin: auto;
+    max-width: 815px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 15px; }
+    .body.alert .email span {
+      user-select: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      display: inline-block;
+      color: #666;
+      margin-right: 15px; }
+    .body.alert .email .divider {
+      border-bottom: 1px solid #ccc; }
+    .body.alert .email p {
+      text-align: left; }
+
+/*# sourceMappingURL=main.css.map */

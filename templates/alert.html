@@ -1,0 +1,54 @@
+{% extends "templates/base.html" %}
+
+{% set meta_title = "Action Alert: Tell Supervisor Aaron Peskin You Support Bike Share" %}
+{% set meta_description = "Ford GoBike and JUMP are close to expanding in District 3. We need your help." %}
+{% set meta_share_graphic = "https://ourbikes.org/static/images/share.png" %}
+
+{% set dark_bg_page = false %}
+
+{% block head %}
+{% endblock %}
+
+{% block body_class %}alert{% endblock %}
+
+{% block body %}
+
+<div class="message">
+    <div class="header">
+<!--       <img src="static/images/action-share.png" class="graphic"> -->
+      <h2>Thanks! This campaign has ended.</h2>
+      <p>Supervisor Aaron Peskin was glad to recieve our emails and is supportive of bike share with continued community outreach.</p>
+<!-- 
+      <h3>Ford GoBike and JUMP are close to expanding in District 3. We need your help to encourage Aaron Peskin to support this expansion of bike share!</h3>
+
+      <h3>District 3 includes North Beach, Chinatown, Fisherman’s Wharf, Polk Gulch, Union Square, the Financial District and Russian, Nob and Telegraph Hills.</h3> -->
+
+<!-- <ul class="social" style="padding-bottom: 12px;">
+      <li><a target="_blank" href="https://twitter.com/home?status=Tell%20the%20%40sfmta_muni%20%26%20Supervisor%20%40VallieBrownD5%20we%20need%20Bike%20Share%20at%20Golden%20Gate%20Park%0A%0Ahttps%3A//ourbikes.org/actionalert" target="_blank" class="twitter">Twitter</a>
+      <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//ourbikes.org/actionalert" target="_blank" class="facebook">Facebook</a>
+    </ul> -->
+
+<!--       <a target="_blank" href="{{letter.link}}" class="button">Send email</a>
+
+
+    </div>
+
+
+    <div class="email">
+      <p class="divider"><span>To </span>{{letter.recipients}}</p>
+      <p class="divider"><span>Subject </span>{{letter.subject}}
+      <p>{{letter.body|safe}}
+      {% if full_name and neighborhood %}
+      <p>{{full_name}}
+      {% endif %} -->
+    </div>
+
+
+</div>
+
+<script>
+  history.pushState(null, "", location.href.split("?")[0]);
+</script>
+
+
+{% endblock %}

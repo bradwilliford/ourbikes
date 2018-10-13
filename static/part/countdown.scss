@@ -1,0 +1,40 @@
+.body.countdown {
+  background: #EB4040;
+  padding: 10px;
+  text-align: center;
+  min-height: 80vh;
+
+  .message {
+    margin: 40px auto;
+  }
+
+  .text {
+    margin: auto;
+    max-width: 700px;
+  }
+
+  h1, h2, h3, p {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .confirm {
+    border: 2px solid #fff;
+    display: inline-block;
+    margin: 20px auto;
+
+    img {
+      position: relative;
+      top: 3px;
+    }
+
+    h3 {
+      padding-top: 0;
+    }
+  }
+
+  #countdown {
+    font-size: 12vw;
+    line-height: 1;
+  }
+}

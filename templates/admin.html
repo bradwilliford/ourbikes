@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Admin</title>
+    </head>
+
+<body>
+
+<h1>{{count}} Signatures</h1>
+
+<p>First Name, Last Name, Neighborhood, Aprox District, Email, Date<br>
+  {% for entry in signatures %}
+    "{{entry.first_name}}", "{{entry.last_name}}", "{{entry.neighborhood}}", "{{entry.primary_district}}", "{{entry.email}}", "{{entry.created}}"<br>
+  {% endfor %}
+</p>
+
+</body>
+</html>

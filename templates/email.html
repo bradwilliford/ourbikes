@@ -1,0 +1,71 @@
+{% extends "templates/base.html" %}
+
+{% set meta_title = "JUMP 500 ebikes countdown" %}
+{% set meta_description = "Time until the SFMTA may allow 500 JUMP ebikes." %}
+{% set meta_share_graphic = "https://ourbikes.org/static/images/share-countdown.jpg" %}
+
+{% set dark_bg_page = true %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+
+<div class="countdown">
+  <div class="message">
+    <div>
+      <h1 class="page-title">JUMP 500 ebikes countdown</h1>
+        <p id="countdown"></p>
+        <div class="text">
+        <h2>Time until the SFMTA officially considers permitting JUMP to operate 500 ebikes in San Francisco.</h2>
+
+    {% if signed %}
+    <div class="confirm">
+      <h2>Share the countdown</h2>
+      <ul class="social light" style="padding-bottom: 12px;">
+        <li><a target="_blank" href="https://twitter.com/home?status=Countdown%20to%20500%20JUMP%20bikes%20in%20SF%20via%20%40ourbikes.%0A%0ATell%20the%20SFMTA%20to%20remove%20the%20JUMP%20ebike%20cap.%0A%0Aourbikes.org/countdown" target="_blank" class="twitter">Twitter</a>
+        <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//ourbikes.org/countdown" target="_blank" class="facebook">Facebook</a>
+      </ul>
+    </div>
+    {% else %}
+      <div class="confirm">
+        <a href="/" style="text-decoration: none;"><h2>Tell SFMTA to remove the cap <img src="/static/images/arrow.svg"></h2></a>
+      </div>
+    {% endif %}
+
+        <p><em>Cap increase date: Oct 9, 2018<br>
+          Current cap: 250<br><a href="https://www.sfmta.com/blog/sfmta-creates-pilot-study-electric-stationless-bike-sharing" target="_blank">Source</a></em>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+var countDownDate = new Date("Oct 9, 2018 00:00:00").getTime();
+setTime();
+
+function setTime() {
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "Countdown complete!";
+  }
+}
+
+setInterval(setTime, 1000);
+</script>
+
+{% endblock %}

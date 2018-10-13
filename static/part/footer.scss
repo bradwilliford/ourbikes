@@ -1,0 +1,58 @@
+.footer {
+  margin: 0 auto 25px;
+  max-width: 700px;
+  line-height: 1.5;
+  padding: 0 20px;
+
+  &.dark {
+    background: #EB4040;
+  }
+
+  .contact {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #332A2A;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  p, p a {
+    font-family: sans-serif;
+    color: #666;
+    font-size: 12px;
+  }
+}
+
+.dark-bg .footer {
+  strong {
+    color: #fff;
+  }
+
+  p, p a {
+    color: rgba(255,255,255,0.75);
+  }
+
+  .social li a {
+    &.twitter {
+      background-image: url(/static/images/twitter-light.svg);
+    }
+
+    &.instagram {
+      background-image: url(/static/images/instagram-light.svg);
+    }
+
+    &.facebook {
+      background-image: url(/static/images/facebook-light.svg);
+    }
+
+    &.medium {
+      background-image: url(/static/images/medium-light.svg);
+    }
+  }
+}

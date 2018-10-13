@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html class="no-js mdc-typography" lang="en">
+    <head>
+      <title>{{meta_title}} – Our Bikes</title>
+      <meta content="{{meta_description}}" name="description">
+      <meta charset="utf-8">
+      <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+      <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Lora:400,400i,700|Source+Sans+Pro:400,600" rel="stylesheet">
+      <link rel="stylesheet" href="/static/main.css?={{app.current_version_id}}">
+
+      <link rel="icon" sizes="192x192" href="/static/images/favicon.png">
+      <link rel="shortcut icon" href="/static/images/favicon.png">
+      <meta property="og:image" content="{{meta_share_graphic}}">
+
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="@ourbikes">
+      <meta name="twitter:title" content="{{meta_title}}">
+      <meta name="twitter:description" content="{{meta_description}}">
+      <meta name="twitter:image" content="{{meta_share_graphic}}">
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123720426-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-123720426-1');
+      </script>
+
+      {% block head %}
+      {% endblock %}
+    </head>
+
+<body class="{% if dark_bg_page %}dark-bg{% endif %}">
+
+{% block nav %}
+<div class="nav">
+
+  <a class="logo" href="/">Our Bikes</a>
+
+  <div class="navbar">
+    <ul>
+      <li><a href="/supporters">{{count}} supporters!</a>
+    </ul>
+  </div>
+</div>
+{% endblock %}
+
+<div class="body {% block body_class %}{% endblock %}">
+{% block body %}
+{% endblock %}
+</div>
+
+<div class="footer">
+  <div class="contact">
+    <p><strong>Follow Our Bikes</strong>
+      <ul class="social">
+        <li><a href="https://twitter.com/ourbikes" target="_blank" class="twitter">Twitter</a>
+        <li><a href="https://instagram.com/ourbikessf" target="_blank" class="instagram">Instagram</a>
+        <li><a href="https://medium.com/@ourbikes" target="_blank" class="medium">Medium</a>
+      </ul>
+
+    <p>Created by your neighbors, <a href="https://twitter.com/Brad_in_SF" target="_blank">Brad</a> and <a href="https://twitter.com/ptraughber" target="_blank">Patrick</a>.
+    <p>Email <a href='&#109;ailto&#58;%6&#56;ell&#111;&#64;our%62ike&#115;&#46;%&#54;Frg'>h&#101;&#108;&#108;o&#64;ourbikes&#46;org</a> to reach us.
+  </div>
+
+  <div class="legal">
+    <p><strong>Privacy &amp; Terms</strong><br> You agree to let Our Bikes share your name and neighborhood with the City of San Francisco and Metropolitan Transportation Commission for the purposes of promoting and advocating for bike sharing. Your information will not be shared with other third parties without your consent. You agree to let Our Bikes send you updates by email, including neighborhood-specific bike share action alerts. Our emails allow you to opt-out anytime. We will gladly delete your data if you choose. Email <a href='&#109;ailto&#58;%6&#56;ell&#111;&#64;our%62ike&#115;&#46;%&#54;Frg'>h&#101;&#108;&#108;o&#64;ourbikes&#46;org</a> with your request.
+  </div>
+</div>
+
+</body>
+</html>

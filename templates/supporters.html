@@ -1,0 +1,32 @@
+{% extends "templates/base.html" %}
+
+{% set meta_title = "Neighborhood supporters" %}
+{% set meta_description = "Our Bikes is proud to have supporters throughout San Francisco!" %}
+{% set meta_share_graphic = "https://ourbikes.org/static/images/share-supporters.png" %}
+
+{% set dark_bg_page = true %}
+
+{% block head %}
+{% endblock %}
+
+{% block body_class %}supporters{% endblock %}
+
+{% block body %}
+
+<div class="supporters">
+  <div class="message">
+    <div class="text">
+      <h1 class="page-title">{{meta_title}}</h1>
+
+      {% if not signed %}
+      <h2><a href="/">Become a supporter!</a></h2>
+      {% endif %}
+
+      {% for neighborhood in neighborhood_list|sort(attribute='name')|sort(attribute='count', reverse=true) %}
+        <h3>{{neighborhood.name}}<br><span style="font-size: 32px;" class="handwriting">{{neighborhood.count}}</span></h3>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

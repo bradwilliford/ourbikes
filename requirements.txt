@@ -1,0 +1,6 @@
+google-api-python-client==1.6.2
+python-slugify==1.2.4
+beautifulsoup4==4.5.3
+google-cloud==0.23.0
+html2text==2016.9.19
+pytz==2017.2

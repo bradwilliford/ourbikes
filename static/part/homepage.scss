@@ -1,0 +1,169 @@
+.body.homepage {
+  .banner {
+    background: #730000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 15px 14px;
+    font-size: 18px;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  .hero {
+    background: #EB4040;
+    padding: 10px;
+    text-align: center;
+
+    .message {
+      margin: 65px auto 150px;
+
+      @media #{$medium} {
+        margin: 50px auto 120px;
+      }
+    }
+
+    .text {
+      margin: auto;
+      max-width: 800px;
+    }
+
+    h1, h2, h3, p {
+      text-align: center;
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 68px;
+      font-weight: 600;
+
+      @media #{$medium} {
+        font-size: 36px;
+      }
+    }
+
+    .confirm {
+      border: 2px solid #fff;
+      display: inline-block;
+      margin: 20px auto;
+
+      img {
+        position: relative;
+        top: 3px;
+      }
+
+      h3 {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .form {
+    margin-top: 40px;
+    text-align: center;
+
+    input, select, button {
+      background: #FFD0D0;
+      border: none;
+      padding: 10px;
+      font-size: 18px;
+      margin: 5px;
+      border-radius: 5px;
+      box-sizing: border-box;
+
+      @media #{$medium} {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 250px;
+      }
+    }
+
+    select {
+      height: 43px;
+      position: relative;
+      top: -1px;
+      color: #777;
+      -webkit-appearance: none;
+    }
+
+    input:focus, select:focus {
+      background: #fff;
+      outline: none;
+    }
+
+    button {
+      background-color: #EB4040;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 8px;
+      -webkit-appearance: none;
+    }
+  }
+
+  .letter {
+    background: #fff;
+    max-width: 760px;
+    margin: -50px auto 50px;
+    padding: 30px;
+    line-height: 1.5;
+    font-weight: 400;
+    position: relative;
+    font-family: 'Lora', sans-serif;
+    font-size: 20px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+
+    strong {
+      font-weight: 900;
+    }
+
+    @media #{$medium} {
+      padding: 15px;
+    }
+
+    @media #{$medium} {
+      font-size: 16px;
+    }
+
+    .to {
+      font-size: 14px;
+      margin-bottom: 30px;
+      background: #f1f1f1;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+
+      p {
+        line-height: 1.5;
+        margin: 5px 0;
+      }
+
+      @media #{$medium} {
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+    }
+
+    p, li {
+      margin: 15px;
+    }
+
+    p.quote {
+      font-style: italic;
+      padding-left: 20px;
+      display: inline-block;
+    }
+
+    ul {
+      list-style-type: circle;
+      margin-left: 20px;
+    }
+
+    a {
+      color: #000;
+    }
+
+  }
+}

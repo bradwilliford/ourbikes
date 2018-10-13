@@ -1,0 +1,82 @@
+.body.alert {
+  padding: 10px;
+  text-align: center;
+
+  a.button {
+    color: #EB4040;
+    border: 2px solid #EB4040;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.8);
+    font-size: 24px;
+    margin: 10px auto 25px;
+    font-weight: bold;
+  }
+
+  .message {
+    margin: 40px auto;
+  }
+
+  .graphic {
+    margin: 20px auto;
+    max-width: 815px;
+    width: 100%;
+  }
+
+  .text {
+    margin: auto;
+    max-width: 815px;
+  }
+
+  h1, h2, h3, p {
+    text-align: center;
+    padding: 10px;
+  }
+
+  h1, h2 {
+    color: #EB4040;
+  }
+
+  .header {
+    max-width: 815px;
+    margin: 0 auto 25px;
+
+    .heart {
+      width: 75px;
+      margin-bottom: 10px;
+    }
+
+    h1, h2 {
+      padding: 0;
+    }
+  }
+
+
+  .email {
+    margin: auto;
+    max-width: 815px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 15px;
+
+    span {
+      user-select: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: bold;
+      display: inline-block;
+      color: #666;
+      margin-right: 15px;
+    }
+
+    .divider {
+      border-bottom: 1px solid #ccc;
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+}

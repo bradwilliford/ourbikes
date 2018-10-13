@@ -1,0 +1,49 @@
+.nav {
+  background: #EB4040;
+  text-align: left;
+  color: #fff;
+  display: flex;
+
+  @media #{$medium} {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  a.logo {
+    background: rgba(115, 0, 1, 0.5);
+    font-family: 'Homemade Apple', cursive;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 17px 20px 8px;
+
+    &:hover {
+      background: rgba(115, 0, 1, 0.6);
+    }
+  }
+
+  .navbar {
+    text-align: right;
+    background: rgba(115, 0, 1, 0.3);
+    flex-grow: 1;
+    line-height: 45px;
+    padding: 0 5px;
+
+    @media #{$medium} {
+      text-align: center;
+    }
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 15px;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,81 @@
+{% extends "templates/base.html" %}
+
+{% set meta_title = "End bike share caps in San Francisco" %}
+{% set meta_description = "Tell our leaders to support new Ford GoBike stations and remove the cap on Jump ebikes." %}
+{% set meta_share_graphic = "https://ourbikes.org/static/images/share.png" %}
+
+{% block body_class %}homepage{% endblock %}
+
+{% block body %}
+
+    <div class="hero dark-bg">
+      <div class="message">
+        <div class="text">
+          <h2><span class="handwriting">San Francisco,</span></h2>
+          <h1>Let’s end bike&nbsp;share&nbsp;caps.</h1>
+          <h2>Tell our leaders to support new Ford GoBike stations and remove the cap on Jump ebikes.</h2>
+        </div>
+        
+        {% if signed %}
+        <div class="confirm">
+          <h2><img src="/static/images/check.svg"> Thanks for adding your name.</h2>
+          <h3>Tell your friends! Share us on <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//ourbikes.org" target="_blank">Facebook</a> and <a href="https://twitter.com/home?status=%F0%9F%9A%B2Tell%20our%20leaders%20to%20support%20new%20Ford%20GoBike%20stations%20and%20remove%20the%20cap%20on%20Jump%20ebikes.%0A%E2%9C%8F%EF%B8%8FI%20just%20signed%20the%20letter.%20Join%20%40ourbikes%20and%20add%20your%20name%3A%20https%3A//ourbikes.org" target="_blank">Twitter</a>.</h3>
+        </div>
+        {% endif %}
+
+        {% if not signed %}
+        <form class="form" action="/sign" method="post">
+          <input type="text" name="full_name" placeholder="Full name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <select name="neighborhood" placeholder="Email" required>
+            <option value="" selected="">Neighborhood...</option>
+            {% for neighborhood in neighborhoods %}
+            <option value="{{neighborhood.name}}">{{neighborhood.name}}</option>
+            {% endfor %}
+          </select>
+
+          <input type="hidden" name="xsrf" value="{{ xsrf_token("/sign") }}">
+          <button type="submit" name="submit" value="Sign">Sign</button>
+        </form>
+        {% endif %}
+
+      </div>
+    </div>
+
+
+    <div class="letter">
+
+      <div class="to">
+        <p>Addressed to:
+        <p>London Breed, Mayor, San Francisco
+        <p>Ed Reiskin, Director of Transportation, San Francisco Municipal Transportation Agency
+        <p>Steve Heminger, Executive Director, Metropolitan Transportation Commission
+      </div>
+
+      <p>Mayor Breed, Director Reiskin and Director Heminger,
+
+
+      <p>We support bike share in San Francisco. Unfortunately, the cap for Jump is 500 ebikes in a city with a daytime population of 1.1 million. Meanwhile, Ford GoBike is capped at zero bikes in many neighborhoods as new stations are needlessly delayed or blocked.
+
+      <p>The SFMTA’s voter-mandated <a href="https://www.sfmta.com/transit-first-policy" target="_blank">Transit-First policy</a> states:
+
+      <p class="quote">Decisions regarding the use of limited public street and sidewalk space shall encourage the use of public rights of way by pedestrians, bicyclists, and public transit, and shall strive to reduce traffic and improve public health and safety.</span>
+
+      <p>Delaying, blocking or putting a cap on bike share violates this policy because:
+
+      <ul>
+        <li>A lack of bikes increases traffic by raising car usage for short to medium distance trips.
+
+        <li>The health and convenience of residents is compromised by restricting a healthy, clean way to get around the city.
+
+        <li>The safety of other bikers is reduced because there are fewer bikes on our streets.
+      </ul>
+
+      <p>Bike share is good for everyone in our city. Support the expansion of Ford GoBike and remove the cap on Jump ebikes.
+
+      <p>Sincerely,<br>
+      The Undersigned
+
+    </div>
+
+{% endblock %}
