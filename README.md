@@ -4,9 +4,9 @@ A simple petition and bike share outreach site at https://ourbikes.org.
 
 Public:
 
-* [Homepage](http://ourbikes.org): Sign the petition
-* [Supporters](https://ourbikes.org/supporters): See neighborhoods of supporters
-* [Action Alert](http://ourbikes.org/actionalert): Landing page for email campaigns
+* [Homepage](https://ourbikes.org): Sign the petition
+* [Supporters](https://ourbikes.org/supporters): Neighborhoods of supporters
+* [Action Alert](https://ourbikes.org/actionalert?debug=true): Landing page for email campaigns
 
 Admin:
 

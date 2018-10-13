@@ -12,6 +12,7 @@ import xsrfutil
 
 
 def get_template_vars(self):
+  debug = bool(self.request.get('debug') == 'true')
   signed = bool(self.request.cookies.get('signed') == 'true')
   if self.request.get('dev') == 'true':
     signed = False
@@ -53,6 +54,8 @@ def get_template_vars(self):
      neighborhood_list = []
 
   # Email campaigns
+  letter_campaign_active = config.LETTER_CAMPAIGN_ACTIVE or debug
+
   subject = random.choice(config.EMAIL_SUBJECTS)
   body = random.choice(config.EMAIL_BODYS)
 
@@ -64,10 +67,15 @@ def get_template_vars(self):
   if closing:
     body = body + '\n\n' + closing
 
-  full_name = self.request.get('full_name')
-  neighborhood = self.request.get('neighborhood')
+  if not debug:
+    full_name = self.request.get('full_name')
+    neighborhood = self.request.get('neighborhood')
+  else:
+    full_name = '<< test name >>'
+    neighborhood = '<< test neighborhood >>'
+
   if full_name and neighborhood:
-    body = body + '\n\n' + full_name + '\nResident of ' + neighborhood
+    body = body + '\n\n' + full_name + '\n' + neighborhood + ' resident'
 
   link = "mailto:%s?subject=%s&body=%s" % (config.RECIPIENTS, quote(subject), quote(body))
 
@@ -79,6 +87,7 @@ def get_template_vars(self):
     'count': count,
     'neighborhood_list': neighborhood_list,
     'neighborhoods': config.NEIGHBORHOODS,
+    'letter_campaign_active': letter_campaign_active,
     'letter': {
       'link': link,
       'recipients': config.RECIPIENTS,
@@ -87,7 +96,8 @@ def get_template_vars(self):
     },
     'app': {
       'current_version_id': os.environ['CURRENT_VERSION_ID'],
-    }
+    },
+    'debug': debug
   }
 
 def get_primary_district(neighborhood_name):

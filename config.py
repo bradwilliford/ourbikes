@@ -10,6 +10,8 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 JINJA_ENVIRONMENT.globals['xsrf_token'] = xsrfutil.xsrf_token
 
+# Site config
+
 PAGES = {
   '/': 'index.html',
   '/supporters': 'supporters.html',
@@ -18,17 +20,22 @@ PAGES = {
 }
 
 REDIRECTS = {
-  '/newsletter': 'https://us19.campaign-archive.com/?u=a1b97c965afa1a1543759ba94&id=939d61e88e',
-  '/stories': 'https://docs.google.com/forms/d/e/1FAIpQLSfMz5RxGoqetMsFF6B31RCfGsC3_6bO3EtqQ2PU2FZ36ANcFQ/viewform',
-  '/why': 'https://medium.com/@ourbikes/why-bike-share-stations-are-good-for-our-neighborhood-in-san-francisco-1f3931c87519',
-  '/map': '/stories',
-  '/nick': 'https://www.nickjosefowitz.com/events/volunteer-canvass-social-with-ourbikes-sf',
-  '/parking': 'https://www.sfmta.com/getting-around/bike/bike-parking/request-bike-rack',
   '/bikeracks': 'https://www.sfmta.com/getting-around/bike/bike-parking/request-bike-rack',
   '/countdown': '/',
+  '/map': '/stories',
+  '/newsletter': 'https://us19.campaign-archive.com/?u=a1b97c965afa1a1543759ba94&id=939d61e88e',
+  '/nick': 'https://www.nickjosefowitz.com/events/volunteer-canvass-social-with-ourbikes-sf',
+  '/parking': 'https://www.sfmta.com/getting-around/bike/bike-parking/request-bike-rack',
+  '/stories': 'https://docs.google.com/forms/d/e/1FAIpQLSfMz5RxGoqetMsFF6B31RCfGsC3_6bO3EtqQ2PU2FZ36ANcFQ/viewform',
+  '/why': 'https://medium.com/@ourbikes/why-bike-share-stations-are-good-for-our-neighborhood-in-san-francisco-1f3931c87519',
 }
 
-RECIPIENTS = "Aaron.Peskin@sfgov.org, hello@ourbikes.org"
+
+# Letter campaign config
+
+LETTER_CAMPAIGN_ACTIVE = False
+
+RECIPIENTS = "no-reply@ourbikes.org, hello@ourbikes.org"
 
 EMAIL_SUBJECTS = [
   "Please support bike share in District 3.",
@@ -70,7 +77,6 @@ As my supervisor, I hope you'll support the rollout of these new transportation 
 """Bike share has revolutionized how many of my friends get around the city. Unfortunately, living in District 3, there isn't a solid bike share network for me to use.
 
 Supervisor, please support more bike share (JUMP and Ford GoBike) in North Beach, Russian Hill, and Nob Hill.""",
-
 ]
 
 NEIGHBORHOODS = [
