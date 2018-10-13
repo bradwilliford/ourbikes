@@ -9,7 +9,7 @@ import os
 import random
 import webapp2
 import xsrfutil
-
+import cgi
 
 def get_template_vars(self):
   debug = bool(self.request.get('debug') == 'true')
@@ -67,15 +67,14 @@ def get_template_vars(self):
   if closing:
     body = body + '\n\n' + closing
 
-  if not debug:
-    full_name = self.request.get('full_name')
-    neighborhood = self.request.get('neighborhood')
-  else:
+  full_name = self.request.get('full_name')
+  neighborhood = self.request.get('neighborhood')
+  if not full_name or not neighborhood and debug:
     full_name = '<< test name >>'
     neighborhood = '<< test neighborhood >>'
 
   if full_name and neighborhood:
-    body = body + '\n\n' + full_name + '\n' + neighborhood + ' resident'
+    body = body + '\n\n' + cgi.escape(full_name) + '\n' + cgi.escape(neighborhood) + ' resident'
 
   link = "mailto:%s?subject=%s&body=%s" % (config.RECIPIENTS, quote(subject), quote(body))
 
