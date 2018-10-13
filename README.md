@@ -5,12 +5,16 @@ A simple petition and bike share outreach site at https://ourbikes.org.
 Public:
 
 * [Homepage](https://ourbikes.org): Sign the petition
+  * Set a cookie after the user submits so a 'thanks' message is displayed.
+  * If a user moves, they can re-submit the form and we'll update their record by email.
 * [Supporters](https://ourbikes.org/supporters): Neighborhoods of supporters
-* [Action Alert](https://ourbikes.org/actionalert?debug=true): Landing page for email campaigns
+  * TODO: add new visualizations!
+* [Action Alert](https://ourbikes.org/actionalert?debug=true&full_name=Jane%20Doe&neighborhood=San%20Francisco): Landing page for email campaigns
+  * Generates a unique email for the supporter to send. With a random combination of input phrases and the user's name and neighborhood.
 
 Admin:
 
-* CSV Export of Data at /adminz
+* CSV Export of Data at /adminz. We use this to import supporters into [Mailchimp](http://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=a1b97c965afa1a1543759ba94&afl=1).
 
 
 ## Development
