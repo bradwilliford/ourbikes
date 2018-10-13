@@ -97,7 +97,8 @@ def get_template_vars(self):
     'app': {
       'current_version_id': os.environ['CURRENT_VERSION_ID'],
     },
-    'debug': debug
+    'debug': debug,
+    'global': config.GLOBAL_STRINGS
   }
 
 def get_primary_district(neighborhood_name):
