@@ -252,7 +252,7 @@ span.handwriting {
 }
 @media only screen and (max-width : 820px) {
   .body.homepage .hero .message {
-    margin: 50px auto 120px;
+    margin: 25px auto 120px;
   }
 }
 .body.homepage .hero .text {
@@ -261,7 +261,7 @@ span.handwriting {
 }
 .body.homepage .hero h1, .body.homepage .hero h2, .body.homepage .hero h3, .body.homepage .hero p {
   text-align: center;
-  padding: 15px;
+  padding: 15px 5px;
 }
 .body.homepage .hero h1 {
   font-size: 68px;
@@ -269,7 +269,7 @@ span.handwriting {
 }
 @media only screen and (max-width : 820px) {
   .body.homepage .hero h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 .body.homepage .hero .confirm {
