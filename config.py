@@ -37,50 +37,139 @@ REDIRECTS = {
 
 # Letter campaign config
 
-LETTER_CAMPAIGN_ACTIVE = False
+LETTER_CAMPAIGN_ACTIVE = True
 
-RECIPIENTS = "no-reply@ourbikes.org, hello@ourbikes.org"
+EMAIL_TO = "bevan.dufty@bart.gov"
+EMAIL_BCC = "hello@ourbikes.org"
 
 EMAIL_SUBJECTS = [
-  "Please support bike share in District 3.",
-  "My support for more bike share in D3.",
-  "I support Ford GoBike and JUMP",
-  "I bike in D3. Help me by supporting more bike share.",
-  "A note of support for bike share (JUMP/Ford GoBike)",
-  "Bike share in D3",
+  "Delay on bike share at 24th St Mission BART?",
+  "Help me get to BART easier with bike share!",
+  "Bike share at the Mission BART stations",
+  "Ford GoBike at Mission BART stations",
+  "Support for Ford GoBike at 24th Street Mission BART",
+  "Support for Ford GoBike at Mission BART stations.",
+  "Help us get bike share at 24th St BART",
+  "Please help us get bike share at 24th Street BART",
+  "Unblock 24th Street BART bike share.",
+  "Bike share at BART isn't controversial.",
+  "Bevan, help us bike share to BART!",
+  "Bike share on the 24th BART Plaza",
+  "I use bike share and BART.",
+  "Ford GoBike at BART in the Mission",
+  "GoBike at BART's 24th Street Mission station",
+  "Ford GoBike station at 24th Street BART",
+  "Bike share at 24th Street BART",
+  "24th St Mission BART Bike Share Station?"
 ]
 
 EMAIL_OPEN = [
-  "Hello Supervisor Aaron Peskin,",
-  "Supervisor Peskin:",
-  "Dear Supervisor Aaron Peskin,",
-  "Supervisor Aaron Peskin,",
+  "Hello Director Bevan Dufty,",
+  "BART Director Dufty,",
+  "Dear BART Director Bevan Dufty,",
+  "Hi Director Dufty,",
+  "Bevan,",
+  "Director Dufty,",
+  "BART Director Bevan Dufty -"
 ]
 
 EMAIL_CLOSE = [
-  "Thanks.",
-  "I look forward to using these new biking options and reducing traffic in our neighborhoods. Thank you.",
-  "Thank you.",
-  "I hope you will support new Ford GoBike bike share stations and help expand the JUMP system.\n\nThanks!",
-  "I appreciate your work in supporting bike share.\n\nThanks!",
+  "Best regards,",
+  "Thank you,",
+  "Sincerely,",
+  "Thanks,",
+  "Regards,",
+  "Best,",
+  "",
 ]
 
 EMAIL_BODYS = [
-"""I am writing in support of bike share in District 3. As a resident of D3, I believe we need more transportation options and bike share is a smart way to get people out of cars.
 
-I wanted to take a quick moment to let you know that I use bike share - both Ford GoBike and JUMP. I fully support expanding these systems and hope you will do the same.""",
+# Email 1 - Bayview
+"""I want to encourage you to **support BART staff and** approve Ford GoBike at 24th Street Mission BART.
 
-"""Bike share is a sustainable and healthy way to get around the city. Sadly, D3 doesn't have the bike share coverage of other areas of the city. It has made living in our part of the city more difficult and often forces me to take an Uber or Lyft.
+**I understand there is a small group that is resisting this station. That is often the case, but you must look at the bigger picture. Hundreds of low income users rely on bike share. Those folks deserve an easier way to get to BART.**
 
-As our D3 Supervisor, I hope you will encourage both Ford GoBike and JUMP to grow their networks in our district. This will really help me get around and I think it will help improve quality of life for all residents.""",
+**Ford** GoBike recently expanded to the Bayview. It takes less than 20 minutes to get to the 24th Street Mission BART station.
 
-"""I am excited to hear a few new Ford GoBike stations may be installed soon in District 3 and that JUMP will increase to 500 bikes citywide (which might allow them to extend coverage to our neighborhood).
+Do not deny our neighbors to BART via bike share. I ask you to support this bike share station.""",
 
-As my supervisor, I hope you'll support the rollout of these new transportation options. It's the right choice for our city, community, and planet.""",
 
-"""Bike share has revolutionized how many of my friends get around the city. Unfortunately, living in District 3, there isn't a solid bike share network for me to use.
+# Email 2 - 16th Street success
+"""The **Ford** GoBike station at 16th St Mission BART has been a **huge** success. The station is **both cleaner and** easier to get to than ever.
 
-Supervisor, please support more bike share (JUMP and Ford GoBike) in North Beach, Russian Hill, and Nob Hill.""",
+It's time to bring that success to the station at 24th Street. **Please do not block this progress.**
+
+**I hear **BART staff has a plan to install bike share on the BART plaza at 24th Street in an unused space and that they have worked hard over the past 2 years to plan for bike share at this station.
+
+**This new bike share station will increase usage of BART and decrease our city's carbon footprint.**
+
+I hope you will support the BART staff **and our community** and get this station installed** now**.""",
+
+
+# Email 3 - Personal
+"""**I am an avid bike share user and so **I would benefit greatly from having bike share at 24th Street Mission BART.
+
+This will increase my personal usage of BART **to get around the Bay Area** as it will allow me easier access to this station.
+
+**As a Director, **I urge you to not block BART's work to approve this bike share station.""",
+
+
+# Email 4 - Friendly for bikers
+"""**I love BART and bike share, so wanted to raise an important issue.**
+
+**As you know, **24th Street is BART's most walkable station in terms of the mode that riders arrive. We must build on this success and make this station also a friendly station for bikers.
+
+I ask you to install a **Ford** GoBike station directly at 24th **Street** Mission BART as soon as possible.
+
+**This station has been in the works since November 2016.** I am concerned that you have acted to delay the installation further.
+
+This hurts **thousands of** bike share users like myself who rely on bike share to get around.""",
+
+
+# Email 5 - More outreach
+"""**Wanted to take a moment to ask for your help.**
+
+We need bike share at 24th Street Mission BART** as soon as possible**. We do not need more outreach.
+
+**Ford** GoBike conducted a survey **of residents** and the **vast** majority of the 500+ respondants supported bringing bike share to this station. **With this data, now is the time to install the station.**
+
+**This station has been in the works since November 2016. It is time to install bike share on the BART plaza.**
+
+Low-income Ford GoBike riders are disproportionately more likely to bike to BART stations than other bike share users. Time for you to be their voice and act accordingly.""",
+
+
+# Email 6 - Equity
+"""**Respectfully,** I **firmly** believe you should direct BART **staff** to install bike share at 24th **Street** Mission BART.
+
+**This is a matter of transportation equity.** **Ford** GoBike has the most successful docked bike share equity program in US. 20 percent of **all** members are part of the bike share for all program. **These low income users have taken more than 80,000 riders since launch.**
+
+Do not hurt our low income bike community by restricting access to BART at 24th Street Mission.""",
+
+# Email 7 - 2 million
+"""**I am writing regarding bike share at BART.**
+
+**Ford** GoBike just passed the 2 million ride mark. **However, **I am concerned that you **still** do not take this transportation mode seriously.
+
+We need a bike station at the 24th St **Mission** BART. Many **other** BART stations have bike share. I am curious to know why this BART station can't have bike share? **The space is not being used.**
+
+I urge you to support bike share at all BART stations, particularly at 24th St. **Mission.**""",
+
+# Email 8 - I use it
+"""I use bike share **to get around San Francisco** frequently. I am not alone as the **Ford GoBike** system has over 2 million rides. Over 80,000 of those rides were to low income users.
+
+Please approve bike share at 24th Street Mission BART. It should be directly on the plaza to encourage more usage.
+
+**This will allow me and my fellow bike share users to connect to BART more easily.** This should be an easy decision given the success at other BART stations. **I welcome your support!**""",
+
+"""Please help us get bike share at 24th Street Mission BART!
+
+**20% of all Ford GoBike members are low income.** Bike share is making it cheaper and healthier for a diverse set of people in our city to get around.
+
+**Being able to use bike share to get to BART makes the Bay Area's overall transit system work better and reduces our reliance on cars.**
+
+As an elected BART director, I hope you'll take action to get this important bike share station installed."""
+
 ]
 
 NEIGHBORHOODS = [

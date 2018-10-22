@@ -447,7 +447,7 @@ span.handwriting {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.8);
   font-size: 24px;
-  margin: 10px auto 25px;
+  margin: 10px auto 5px;
   font-weight: bold;
 }
 .body.alert .message {
@@ -501,6 +501,10 @@ span.handwriting {
 }
 .body.alert .email p {
   text-align: left;
+}
+.body.alert .instructions {
+  font-size: 13px;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

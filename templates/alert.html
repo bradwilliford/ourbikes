@@ -1,8 +1,8 @@
 {% extends "templates/base.html" %}
 
-{% set meta_title = "Action Alert: Tell Supervisor Aaron Peskin You Support Bike Share" %}
-{% set meta_description = "Ford GoBike and JUMP are close to expanding in District 3. We need your help to encourage Aaron Peskin to support this expansion of bike share!" %}
-{% set meta_share_graphic = "https://ourbikes.org/static/images/share-supporters.png" %}
+{% set meta_title = "Action Alert: Bike Share at 24th Street Mission BART" %}
+{% set meta_description = "BART staff are ready to approve Ford GoBike at 24th Street Mission BART, but Director Bevan Dufty is blocking approval due to opposition from some neighborhood groups. Let him know where you stand on bike share." %}
+{% set meta_share_graphic = "https://ourbikes.org/static/images/24bart.png" %}
 
 {% set dark_bg_page = false %}
 
@@ -14,13 +14,12 @@
 {% block body %}
   <div class="message">
     <div class="header">
-        {% if not letter_campaign_active or not debug %}
+        {% if not letter_campaign_active and not debug %}
           <h2>This campaign has ended.</h2>
           <p>Thank you! We've received enough emails from supporters for this campaign.</p>
         {% else %}
 
-
-          <img src="{{meta_share_graphic}}" class="graphic">
+          <!-- <img src="{{meta_share_graphic}}" class="graphic"> -->
 
           <h2>{{meta_title}}</h2>
           <h3>{{meta_description}}</h3>
@@ -31,9 +30,12 @@
           </ul> -->
 
           <a target="_blank" href="{{letter.link}}" class="button">Send email</a>
+          <p class="instructions">You can customize the email after you select the button above.<br>
+          Refresh the page to for other example emails.</p>
 
           <div class="email">
-            <p class="divider"><span>To </span>{{letter.recipients}}</p>
+            <p class="divider"><span>To </span>{{letter.to}}</p>
+            <p class="divider"><span>BCC </span>{{letter.bcc}}</p>
             <p class="divider"><span>Subject </span>{{letter.subject}}
             <p>{{letter.body|safe}}
             {% if full_name and neighborhood %}

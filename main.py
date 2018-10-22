@@ -7,6 +7,7 @@ import jinja2
 import logging
 import os
 import random
+import re
 import webapp2
 import xsrfutil
 import cgi
@@ -63,20 +64,40 @@ def get_template_vars(self):
   if intro:
     body = intro + '\n\n' + body
 
-  closing = random.choice(config.EMAIL_CLOSE)
-  if closing:
-    body = body + '\n\n' + closing
-
   full_name = self.request.get('full_name')
   neighborhood = self.request.get('neighborhood')
-  if not full_name or not neighborhood and debug:
+  if not full_name and not neighborhood and debug:
     full_name = '<< test name >>'
     neighborhood = '<< test neighborhood >>'
 
-  if full_name and neighborhood:
-    body = body + '\n\n' + cgi.escape(full_name) + '\n' + cgi.escape(neighborhood) + ' resident'
+  if full_name:
+    closing = random.choice(config.EMAIL_CLOSE)
+    if closing:
+      body = body + '\n\n' + closing
 
-  link = "mailto:%s?subject=%s&body=%s" % (config.RECIPIENTS, quote(subject), quote(body))
+  if full_name and neighborhood:
+    if neighborhood.startswith('Other'):
+      neighborhood = ''
+    body = body + '\n\n' + cgi.escape(full_name) + '\n' + cgi.escape(neighborhood)
+
+  # Replace some stuff randomly
+  replacement_count = body.count('**') / 2
+  while replacement_count:
+    if random.randint(0, 2) >= 1:
+      body = re.sub(r'\*\*.*?\*\*', r'##', body, 1)
+    else:
+      body = re.sub(r'\*\*', r'##', body, 1)
+      body = re.sub(r'\*\*', r'##', body, 1)
+    replacement_count -= 1
+
+  body = re.sub('##', '', body)
+  body = re.sub(r'\*\*', '', body)
+  body = re.sub('  ', ' ', body)
+
+  # Ensure we don't have any extra line breaks
+  body = re.sub(r'\n\n+\n', '\n\n', body)
+
+  link = "mailto:%s?bcc=%s&subject=%s&body=%s" % (config.EMAIL_TO, config.EMAIL_BCC, quote(subject), quote(body))
 
   body = body.replace('\n', '<br>')
 
@@ -89,7 +110,8 @@ def get_template_vars(self):
     'letter_campaign_active': letter_campaign_active,
     'letter': {
       'link': link,
-      'recipients': config.RECIPIENTS,
+      'to': config.EMAIL_TO,
+      'bcc': config.EMAIL_BCC,
       'subject': subject,
       'body': body,
     },
